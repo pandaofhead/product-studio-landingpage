@@ -4,7 +4,10 @@ import { NextSeoProps } from 'next-seo'
 import { FaGithub, FaTwitter } from 'react-icons/fa'
 import { FiCheck } from 'react-icons/fi'
 
+import { Logo } from './logo'
+
 const siteConfig = {
+  logo: Logo,
   seo: {
     title: 'CentralSpace',
     description: 'All rights reserved @2024',
