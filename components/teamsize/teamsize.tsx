@@ -12,7 +12,6 @@ import { FiCheck } from 'react-icons/fi'
 
 import React from 'react'
 
-// Import gtag if using Google Analytics
 import {
   ButtonLink,
   ButtonLinkProps,
@@ -22,29 +21,29 @@ import { Section, SectionProps, SectionTitle } from '#components/section'
 
 import { gtag } from '../../lib/gtag'
 
-export interface PricingPlan {
+export interface TeamSizePlan {
   id: string
   title: React.ReactNode
   description: React.ReactNode
   price: React.ReactNode
-  features: Array<PricingFeatureProps | null>
+  features: Array<TeamSizeFeatureProps | null>
   action: ButtonLinkProps & { label?: string }
   isRecommended?: boolean
 }
 
-export interface PricingProps extends SectionProps {
+export interface TeamSizeProps extends SectionProps {
   description: React.ReactNode
-  plans: Array<PricingPlan>
+  plans: Array<TeamSizePlan>
 }
 
-export const Pricing: React.FC<PricingProps> = (props) => {
+export const TeamSize: React.FC<TeamSizeProps> = (props) => {
   const { children, plans, title, description, ...rest } = props
 
   const handleClick = (planId: string) => {
     console.log('Clicked on plan:', planId)
     // Send tracking event (using Google Analytics gtag as an example)
     gtag('event', 'click', {
-      event_category: 'Pricing',
+      event_category: 'TeamSize',
       event_label: planId,
       value: 1,
     })
@@ -55,22 +54,22 @@ export const Pricing: React.FC<PricingProps> = (props) => {
         <SectionTitle title={title} description={description}></SectionTitle>
         <SimpleGrid columns={[1, null, 3]} spacing={4}>
           {plans?.map((plan) => (
-            <PricingBox
+            <TeamSizeBox
               key={plan.id}
               title={plan.title}
               description={plan.description}
               price={plan.price}
               flex="1"
             >
-              <PricingFeatures>
+              <TeamSizeFeatures>
                 {plan.features.map((feature, i) =>
                   feature ? (
-                    <PricingFeature key={i} {...feature} />
+                    <TeamSizeFeature key={i} {...feature} />
                   ) : (
                     <br key={i} />
                   ),
                 )}
-              </PricingFeatures>
+              </TeamSizeFeatures>
               <ButtonLink
                 colorScheme="primary"
                 {...plan.action}
@@ -78,7 +77,7 @@ export const Pricing: React.FC<PricingProps> = (props) => {
               >
                 {plan.action.label || 'Learn more'}
               </ButtonLink>
-            </PricingBox>
+            </TeamSizeBox>
           ))}
         </SimpleGrid>
         {children}
@@ -87,7 +86,7 @@ export const Pricing: React.FC<PricingProps> = (props) => {
   )
 }
 
-const PricingFeatures: React.FC<React.PropsWithChildren<{}>> = ({
+const TeamSizeFeatures: React.FC<React.PropsWithChildren<{}>> = ({
   children,
 }) => {
   return (
@@ -103,12 +102,12 @@ const PricingFeatures: React.FC<React.PropsWithChildren<{}>> = ({
   )
 }
 
-export interface PricingFeatureProps {
+export interface TeamSizeFeatureProps {
   title: React.ReactNode
   iconColor?: string
 }
 
-const PricingFeature: React.FC<PricingFeatureProps> = (props) => {
+const TeamSizeFeature: React.FC<TeamSizeFeatureProps> = (props) => {
   const { title, iconColor = 'primary.500' } = props
   return (
     <HStack>
@@ -120,13 +119,13 @@ const PricingFeature: React.FC<PricingFeatureProps> = (props) => {
   )
 }
 
-export interface PricingBoxProps extends Omit<StackProps, 'title'> {
+export interface TeamSizeBoxProps extends Omit<StackProps, 'title'> {
   title: React.ReactNode
   description: React.ReactNode
   price: React.ReactNode
 }
 
-const PricingBox: React.FC<PricingBoxProps> = (props) => {
+const TeamSizeBox: React.FC<TeamSizeBoxProps> = (props) => {
   const { title, description, price, children, ...rest } = props
   return (
     <VStack

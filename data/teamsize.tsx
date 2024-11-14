@@ -23,7 +23,7 @@ export default {
         },
       ],
       action: {
-        href: '#',
+        href: 'javascript:void(0)',
       },
     },
 
@@ -48,7 +48,7 @@ export default {
         },
       ],
       action: {
-        href: '#',
+        href: 'javascript:void(0)',
       },
     },
 
@@ -73,7 +73,7 @@ export default {
         },
       ],
       action: {
-        href: '#',
+        href: 'javascript:void(0)',
       },
     },
   ],

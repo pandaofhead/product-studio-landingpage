@@ -25,6 +25,10 @@ const siteConfig = {
         label: 'Pricing',
       },
       {
+        id: 'teamsize',
+        label: 'Team Size',
+      },
+      {
         label: 'Login',
         href: '/#',
       },

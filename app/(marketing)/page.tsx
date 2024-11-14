@@ -52,6 +52,7 @@ import {
 } from '#components/highlights'
 import { FallInPlace } from '#components/motion/fall-in-place'
 import { Pricing } from '#components/pricing/pricing'
+import { TeamSize } from '#components/teamsize/teamsize'
 import { Testimonial, Testimonials } from '#components/testimonials'
 import { Em } from '#components/typography'
 import faq from '#data/faq'
@@ -300,9 +301,9 @@ const PricingSection = () => {
 
 const TeamSizeSection = () => {
   return (
-    <Pricing {...teamsize}>
+    <TeamSize {...teamsize}>
       <Text p="8" textAlign="center" color="muted"></Text>
-    </Pricing>
+    </TeamSize>
   )
 }
 

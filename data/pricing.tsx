@@ -29,7 +29,7 @@ export default {
         },
       ],
       action: {
-        href: '#',
+        href: 'javascript:void(0)',
       },
     },
 
@@ -60,15 +60,14 @@ export default {
         },
       ],
       action: {
-        href: '#',
+        href: 'javascript:void(0)',
       },
     },
 
     {
       id: 'enterprise',
       title: 'Enterprise',
-      description:
-        'Comprehensive solutions for large organizations.',
+      description: 'Comprehensive solutions for large organizations.',
       price: 'Contact us',
       features: [
         {
@@ -91,7 +90,7 @@ export default {
         },
       ],
       action: {
-        href: '#',
+        href: 'javascript:void(0)',
       },
     },
   ],
