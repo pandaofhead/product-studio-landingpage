@@ -59,8 +59,8 @@ import pricing from '#data/pricing'
 import teamsize from '#data/teamsize'
 import testimonials from '#data/testimonials'
 
-export const meta: Metadata = {
-  title: ' CentralSpace',
+export const metadata: Metadata = {
+  title: 'CentralSpace',
   description:
     'CentralSpace is a Centralized Workspace that helps you bridge the gap between developers and clients.',
 }
