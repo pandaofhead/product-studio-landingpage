@@ -39,10 +39,8 @@ export const Pricing: React.FC<PricingProps> = (props) => {
 
   return (
     <Section id="pricing" pos="relative" {...rest}>
-      <BackgroundGradient height="100%" />
       <Box zIndex="2" pos="relative">
         <SectionTitle title={title} description={description}></SectionTitle>
-
         <SimpleGrid columns={[1, null, 3]} spacing={4}>
           {plans?.map((plan) => (
             <PricingBox
@@ -50,17 +48,7 @@ export const Pricing: React.FC<PricingProps> = (props) => {
               title={plan.title}
               description={plan.description}
               price={plan.price}
-              sx={
-                plan.isRecommended
-                  ? {
-                      borderColor: 'primary.500',
-                      _dark: {
-                        borderColor: 'primary.500',
-                        bg: 'blackAlpha.300',
-                      },
-                    }
-                  : {}
-              }
+              flex="1"
             >
               <PricingFeatures>
                 {plan.features.map((feature, i) =>
@@ -72,12 +60,11 @@ export const Pricing: React.FC<PricingProps> = (props) => {
                 )}
               </PricingFeatures>
               <ButtonLink colorScheme="primary" {...plan.action}>
-                {plan.action.label || 'Sign Up'}
+                {plan.action.label || 'Learn more'}
               </ButtonLink>
             </PricingBox>
           ))}
         </SimpleGrid>
-
         {children}
       </Box>
     </Section>

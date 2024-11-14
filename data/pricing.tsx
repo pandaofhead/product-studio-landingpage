@@ -6,108 +6,92 @@ export default {
     'Pay once and get life-time access to our high quality components.',
   plans: [
     {
-      id: 'oss',
-      title: 'Open Source',
-      description: 'Basic compoents, perfect to get started.',
-      price: 'Free',
+      id: 'basic',
+      title: 'Basic',
+      description:
+        'Essential tools to streamline communication and access documentation for small teams.',
+      price: '$29/month',
       features: [
         {
-          title: 'MIT License',
+          title: 'AI-Powered Information Retrieval',
         },
         {
-          title: 'Authentication (Clerk/Supabase/Magic)',
+          title: 'Basic Documentation Management',
         },
         {
-          title: 'Form (react-hook-form)',
+          title: 'Single Workspace',
         },
         {
-          title: 'Modals manager',
+          title: 'Client Dashboard Access',
         },
         {
-          title: 'Hotkeys',
-        },
-        {
-          title: 'Web3 components',
-        },
-        {
-          title: 'And much more...',
+          title: 'Standard Support',
         },
       ],
       action: {
         href: '#',
       },
     },
+
     {
-      id: 'bootstrap',
-      title: 'Bootstrap',
-      description: 'Complete frontend stack for bootstrappers and small teams.',
-      price: 'Free',
-      isRecommended: true,
+      id: 'pro',
+      title: 'Pro',
+      description:
+        'Advanced features for growing teams needing flexibility and automation.',
+      price: '$79/month',
       features: [
         {
-          title: 'One project',
+          title: 'Customizable Workspaces',
         },
         {
-          title: 'One developer',
+          title: 'Automated Project Documentation',
         },
         {
-          title: 'Advanced components',
+          title: 'Multiple Workspace Integrations',
         },
         {
-          title: 'Multiple themes',
+          title: 'Secure Role-Based Access Control',
         },
         {
-          title: 'Next.js and Electron boilerplates',
+          title: 'Priority Support',
         },
         {
-          title: 'Private discord community',
-        },
-        {
-          title: '1 year of updates',
-        },
-        null,
-        {
-          title: 'Private beta access',
-          iconColor: 'green.500',
+          title: 'Analytics and Reporting',
         },
       ],
       action: {
-        href: 'https://appulse.gumroad.com/l/saas-ui-pro-pre-order?variant=Single%20license',
+        href: '#',
       },
     },
+
     {
-      id: 'startup',
-      title: 'Startup',
-      description: 'Unlimited license for growing teams.',
-      price: (
-        <HStack>
-          <Text textDecoration="line-through" fontSize="sm" color="gray.400">
-            €999,-
-          </Text>
-          <Text>€499,-</Text>
-        </HStack>
-      ),
+      id: 'enterprise',
+      title: 'Enterprise',
+      description:
+        'Comprehensive solutions for large organizations.',
+      price: 'Contact us',
       features: [
         {
-          title: 'Unlimited projects',
+          title: 'Unlimited Workspaces and Integrations',
         },
         {
-          title: 'Unlimited developers',
+          title: 'API Access for Custom Integrations',
         },
         {
-          title: '1 year of updates',
+          title: 'Advanced Analytics & Insights',
         },
         {
-          title: 'Everything from Bootstrap',
+          title: 'Dedicated Account Manager',
         },
-        null,
         {
-          title: 'Private beta access',
-          iconColor: 'green.500',
+          title: 'Real-Time Notifications and Alerts',
+        },
+        {
+          title: '24/7 Priority Support',
         },
       ],
       action: {
-        href: 'https://appulse.gumroad.com/l/saas-ui-pro-pre-order?variant=Unlimited%20license',
+        href: '#',
       },
     },
   ],

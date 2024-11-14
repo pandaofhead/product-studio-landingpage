@@ -50,18 +50,19 @@ import {
   HighlightsItem,
   HighlightsTestimonialItem,
 } from '#components/highlights'
-import { ChakraLogo, NextjsLogo } from '#components/logos'
 import { FallInPlace } from '#components/motion/fall-in-place'
 import { Pricing } from '#components/pricing/pricing'
 import { Testimonial, Testimonials } from '#components/testimonials'
 import { Em } from '#components/typography'
 import faq from '#data/faq'
 import pricing from '#data/pricing'
+import teamsize from '#data/teamsize'
 import testimonials from '#data/testimonials'
 
 export const meta: Metadata = {
-  title: 'Saas UI Landingspage',
-  description: 'Free SaaS landingspage starter kit',
+  title: ' CentralSpace',
+  description:
+    'CentralSpace is a Centralized Workspace that helps you bridge the gap between developers and clients.',
 }
 
 const Home: NextPage = () => {
@@ -69,15 +70,10 @@ const Home: NextPage = () => {
     <Box>
       <HeroSection />
 
-      <HighlightsSection />
-
       <FeaturesSection />
 
-      <TestimonialsSection />
-
       <PricingSection />
-
-      <FaqSection />
+      <TeamSizeSection />
     </Box>
   )
 }
@@ -94,22 +90,20 @@ const HeroSection: React.FC = () => {
             px="0"
             title={
               <FallInPlace>
-                Build beautiful
-                <Br /> software faster
+                Bridge your communication gap
+                <Br /> faster and easier
               </FallInPlace>
             }
             description={
               <FallInPlace delay={0.4} fontWeight="medium">
-                Saas UI is a <Em>React component library</Em>
-                <Br /> that doesn&apos;t get in your way and helps you <Br />{' '}
-                build intuitive SaaS products with speed.
+                CentralSpace is a <Em>Centralized Workspace</Em>
+                <Br /> that helps you <Br /> bridge the gap between developers
+                and clients.
               </FallInPlace>
             }
           >
             <FallInPlace delay={0.8}>
-              <HStack pt="4" pb="12" spacing="8">
-                <NextjsLogo height="28px" /> <ChakraLogo height="20px" />
-              </HStack>
+              <HStack pt="4" pb="12" spacing="8" />
 
               <ButtonGroup spacing={4} alignItems="center">
                 <ButtonLink colorScheme="primary" size="lg" href="/signup">
@@ -117,7 +111,7 @@ const HeroSection: React.FC = () => {
                 </ButtonLink>
                 <ButtonLink
                   size="lg"
-                  href="https://demo.saas-ui.dev"
+                  href=""
                   variant="outline"
                   rightIcon={
                     <Icon
@@ -172,7 +166,7 @@ const HeroSection: React.FC = () => {
           {
             title: 'Accessible',
             icon: FiSmile,
-            description: 'All components strictly follow WAI-ARIA standards.',
+            description: 'Designed with accessibility in mind, for all users.',
             iconPosition: 'left',
             delay: 0.6,
           },
@@ -180,7 +174,7 @@ const HeroSection: React.FC = () => {
             title: 'Themable',
             icon: FiSliders,
             description:
-              'Fully customize all components to your brand with theme support and style props.',
+              'Multiple themes with darkmode support, always have the perfect starting point for your next project.',
             iconPosition: 'left',
             delay: 0.8,
           },
@@ -188,7 +182,7 @@ const HeroSection: React.FC = () => {
             title: 'Composable',
             icon: FiGrid,
             description:
-              'Compose components to fit your needs and mix them together to create new ones.',
+              'Build your team with a set of composable components that work together.',
             iconPosition: 'left',
             delay: 1,
           },
@@ -196,7 +190,7 @@ const HeroSection: React.FC = () => {
             title: 'Productive',
             icon: FiThumbsUp,
             description:
-              'Designed to reduce boilerplate and fully typed, build your product at speed.',
+              'Bring your ideas to life with a productive development experience.',
             iconPosition: 'left',
             delay: 1.1,
           },
@@ -204,112 +198,6 @@ const HeroSection: React.FC = () => {
         reveal={FallInPlace}
       />
     </Box>
-  )
-}
-
-const HighlightsSection = () => {
-  const { value, onCopy, hasCopied } = useClipboard('yarn add @saas-ui/react')
-
-  return (
-    <Highlights>
-      <HighlightsItem colSpan={[1, null, 2]} title="Core components">
-        <VStack alignItems="flex-start" spacing="8">
-          <Text color="muted" fontSize="xl">
-            Get started for free with <Em>30+ open source components</Em>.
-            Including authentication screens with Clerk, Supabase and Magic.
-            Fully functional forms with React Hook Form. Data tables with React
-            Table.
-          </Text>
-
-          <Flex
-            rounded="full"
-            borderWidth="1px"
-            flexDirection="row"
-            alignItems="center"
-            py="1"
-            ps="8"
-            pe="2"
-            bg="primary.900"
-            _dark={{ bg: 'gray.900' }}
-          >
-            <Box>
-              <Text color="yellow.400" display="inline">
-                yarn add
-              </Text>{' '}
-              <Text color="cyan.300" display="inline">
-                @saas-ui/react
-              </Text>
-            </Box>
-            <IconButton
-              icon={hasCopied ? <FiCheck /> : <FiCopy />}
-              aria-label="Copy install command"
-              onClick={onCopy}
-              variant="ghost"
-              ms="4"
-              isRound
-              color="white"
-            />
-          </Flex>
-        </VStack>
-      </HighlightsItem>
-      <HighlightsItem title="Solid foundations">
-        <Text color="muted" fontSize="lg">
-          We don&apos;t like to re-invent the wheel, neither should you. We
-          selected the most productive and established tools in the scene and
-          build Saas UI on top of it.
-        </Text>
-      </HighlightsItem>
-      <HighlightsTestimonialItem
-        name="Renata Alink"
-        description="Founder"
-        avatar="/static/images/avatar.jpg"
-        gradient={['pink.200', 'purple.500']}
-      >
-        “Saas UI helped us set up a beautiful modern UI in no time. It saved us
-        hundreds of hours in development time and allowed us to focus on
-        business logic for our specific use-case from the start.”
-      </HighlightsTestimonialItem>
-      <HighlightsItem
-        colSpan={[1, null, 2]}
-        title="Start your next idea two steps ahead"
-      >
-        <Text color="muted" fontSize="lg">
-          We took care of all your basic frontend needs, so you can start
-          building functionality that makes your product unique.
-        </Text>
-        <Wrap mt="8">
-          {[
-            'authentication',
-            'navigation',
-            'crud',
-            'settings',
-            'multi-tenancy',
-            'layouts',
-            'billing',
-            'a11y testing',
-            'server-side rendering',
-            'documentation',
-            'onboarding',
-            'storybooks',
-            'theming',
-            'upselling',
-            'unit testing',
-            'feature flags',
-            'responsiveness',
-          ].map((value) => (
-            <Tag
-              key={value}
-              variant="subtle"
-              colorScheme="purple"
-              rounded="full"
-              px="3"
-            >
-              {value}
-            </Tag>
-          ))}
-        </Wrap>
-      </HighlightsItem>
-    </Highlights>
   )
 }
 
@@ -324,16 +212,16 @@ const FeaturesSection = () => {
           textAlign="left"
           as="p"
         >
-          Not your standard
-          <Br /> dashboard template.
+          Know your team and clients better
+          <Br /> with CentralSpace
         </Heading>
       }
       description={
         <>
-          Saas UI Pro includes everything you need to build modern frontends.
+          CentralSpace is a centralized workspace that helps you bridge the gap
           <Br />
-          Use it as a template for your next product or foundation for your
-          design system.
+          between developers and clients. It is designed to be accessible,
+          themable, and composable for small teams.
         </>
       }
       align="left"
@@ -341,71 +229,66 @@ const FeaturesSection = () => {
       iconSize={4}
       features={[
         {
-          title: '#components.',
-          icon: FiBox,
-          description:
-            'All premium components are available on a private NPM registery, no more copy pasting and always up-to-date.',
-          variant: 'inline',
-        },
-        {
-          title: 'Starterkits.',
-          icon: FiLock,
-          description:
-            'Example apps in Next.JS, Electron. Including authentication, billing, example pages, everything you need to get started FAST.',
-          variant: 'inline',
-        },
-        {
-          title: 'Documentation.',
+          title: 'AI-Powered Information Retrieval',
           icon: FiSearch,
           description:
-            'Extensively documented, including storybooks, best practices, use-cases and examples.',
+            'Leverage AI to quickly retrieve relevant documentation and answers, reducing time spent searching for information across multiple sources.',
           variant: 'inline',
         },
+
         {
-          title: 'Onboarding.',
-          icon: FiUserPlus,
+          title: 'Automated Documentation Generation',
+          icon: FiCopy,
           description:
-            'Add user onboarding flows, like tours, hints and inline documentation without breaking a sweat.',
+            'Automatically generate and update documentation based on project changes, ensuring that all stakeholders have access to the latest information.',
           variant: 'inline',
         },
+
         {
-          title: 'Feature flags.',
-          icon: FiFlag,
-          description:
-            "Implement feature toggles for your billing plans with easy to use hooks. Connect Flagsmith, or other remote config services once you're ready.",
-          variant: 'inline',
-        },
-        {
-          title: 'Upselling.',
-          icon: FiTrendingUp,
-          description:
-            '#components and hooks for upgrade flows designed to make upgrading inside your app frictionless.',
-          variant: 'inline',
-        },
-        {
-          title: 'Themes.',
+          title: 'Customizable Workspace Setup',
           icon: FiToggleLeft,
           description:
-            'Includes multiple themes with darkmode support, always have the perfect starting point for your next project.',
+            'Choose from a variety of templates or set up a personalized workspace tailored to the unique needs of your team and projects.',
           variant: 'inline',
         },
+
         {
-          title: 'Generators.',
-          icon: FiTerminal,
-          description:
-            'Extend your design system while maintaininig code quality and consistency with built-in generators.',
-          variant: 'inline',
-        },
-        {
-          title: 'Monorepo.',
+          title: 'Seamless API Integrations',
           icon: FiCode,
-          description: (
-            <>
-              All code is available as packages in a high-performance{' '}
-              <Link href="https://turborepo.com">Turborepo</Link>, you have full
-              control to modify and adjust it to your workflow.
-            </>
-          ),
+          description:
+            'Integrate CentralSpace APIs with your existing tools and platforms, keeping your workflows connected and allowing easy access to project details.',
+          variant: 'inline',
+        },
+
+        {
+          title: 'Centralized Communication Hub',
+          icon: FiUserPlus,
+          description:
+            'Bring developers and clients together with dedicated channels, messaging, and feedback tools to keep everyone aligned and informed.',
+          variant: 'inline',
+        },
+
+        {
+          title: 'Real-Time Updates and Notifications',
+          icon: FiFlag,
+          description:
+            'Stay updated on project progress with real-time notifications and alerts, ensuring no critical information is missed by any team member.',
+          variant: 'inline',
+        },
+
+        {
+          title: 'Access Permissions & Security Controls',
+          icon: FiLock,
+          description:
+            'Set role-based permissions and control access to sensitive information, giving both clients and developers the access they need without compromising security.',
+          variant: 'inline',
+        },
+
+        {
+          title: 'Analytics and Reporting',
+          icon: FiTrendingUp,
+          description:
+            'Track workspace activity, document engagement, and communication patterns to improve collaboration and identify areas for optimization.',
           variant: 'inline',
         },
       ]}
@@ -413,49 +296,20 @@ const FeaturesSection = () => {
   )
 }
 
-const TestimonialsSection = () => {
-  const columns = React.useMemo(() => {
-    return testimonials.items.reduce<Array<typeof testimonials.items>>(
-      (columns, t, i) => {
-        columns[i % 3].push(t)
-
-        return columns
-      },
-      [[], [], []],
-    )
-  }, [])
-
-  return (
-    <Testimonials
-      title={testimonials.title}
-      columns={[1, 2, 3]}
-      innerWidth="container.xl"
-    >
-      <>
-        {columns.map((column, i) => (
-          <Stack key={i} spacing="8">
-            {column.map((t, i) => (
-              <Testimonial key={i} {...t} />
-            ))}
-          </Stack>
-        ))}
-      </>
-    </Testimonials>
-  )
-}
-
 const PricingSection = () => {
   return (
     <Pricing {...pricing}>
-      <Text p="8" textAlign="center" color="muted">
-        VAT may be applicable depending on your location.
-      </Text>
+      <Text p="8" textAlign="center" color="muted"></Text>
     </Pricing>
   )
 }
 
-const FaqSection = () => {
-  return <Faq {...faq} />
+const TeamSizeSection = () => {
+  return (
+    <Pricing {...teamsize}>
+      <Text p="8" textAlign="center" color="muted"></Text>
+    </Pricing>
+  )
 }
 
 export default Home

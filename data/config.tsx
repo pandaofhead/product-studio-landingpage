@@ -3,13 +3,11 @@ import { Link } from '@saas-ui/react'
 import { NextSeoProps } from 'next-seo'
 import { FaGithub, FaTwitter } from 'react-icons/fa'
 import { FiCheck } from 'react-icons/fi'
-import { Logo } from './logo'
 
 const siteConfig = {
-  logo: Logo,
   seo: {
-    title: 'Saas UI',
-    description: 'The React component library for startups',
+    title: 'CentralSpace',
+    description: 'All rights reserved @2024',
   } as NextSeoProps,
   termsUrl: '#',
   privacyUrl: '#',
@@ -22,10 +20,6 @@ const siteConfig = {
       {
         id: 'pricing',
         label: 'Pricing',
-      },
-      {
-        id: 'faq',
-        label: 'FAQ',
       },
       {
         label: 'Login',
@@ -41,50 +35,49 @@ const siteConfig = {
   footer: {
     copyright: (
       <>
-        Built by{' '}
-        <Link href="https://twitter.com/Pagebakers">Eelco Wiersma</Link>
+        Built by <Link href="">Cornell Tech Product Studio</Link>
       </>
     ),
     links: [
       {
-        href: 'mailto:hello@saas-ui.dev',
+        href: 'mailto:hq48@cornell.edu',
         label: 'Contact',
       },
       {
-        href: 'https://twitter.com/saas_js',
+        href: '',
         label: <FaTwitter size="14" />,
       },
       {
-        href: 'https://github.com/saas-js/saas-ui',
+        href: '',
         label: <FaGithub size="14" />,
       },
     ],
   },
   signup: {
-    title: 'Start building with Saas UI',
+    title: 'Start building with CentralSpace',
     features: [
       {
         icon: FiCheck,
         title: 'Accessible',
-        description: 'All components strictly follow WAI-ARIA standards.',
+        description: 'Designed to be accessible and usable for everyone.',
       },
       {
         icon: FiCheck,
         title: 'Themable',
         description:
-          'Fully customize all components to your brand with theme support and style props.',
+          'Customize the look and feel of your app with a theme that fits your brand.',
       },
       {
         icon: FiCheck,
         title: 'Composable',
         description:
-          'Compose components to fit your needs and mix them together to create new ones.',
+          'Build your team with a set of composable components that work together.',
       },
       {
         icon: FiCheck,
         title: 'Productive',
         description:
-          'Designed to reduce boilerplate and fully typed, build your product at speed.',
+          'Bring your ideas to life with a productive development experience.',
       },
     ],
   },
