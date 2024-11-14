@@ -1,6 +1,13 @@
 import { ColorModeScript, theme } from '@chakra-ui/react'
+import type { Metadata } from 'next'
 
 import { Provider } from './provider'
+
+export const metadata: Metadata = {
+  title: 'CentralSpace',
+  description:
+    'CentralSpace is a Centralized Workspace that helps you bridge the gap between developers and clients.',
+}
 
 export default function Layout(props: { children: React.ReactNode }) {
   const colorMode = theme.config.initialColorMode

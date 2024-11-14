@@ -59,12 +59,6 @@ import pricing from '#data/pricing'
 import teamsize from '#data/teamsize'
 import testimonials from '#data/testimonials'
 
-export const metadata: Metadata = {
-  title: 'CentralSpace',
-  description:
-    'CentralSpace is a Centralized Workspace that helps you bridge the gap between developers and clients.',
-}
-
 const Home: NextPage = () => {
   return (
     <Box>
